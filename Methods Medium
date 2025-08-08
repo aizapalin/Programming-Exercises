@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static int countVowels(String str) {
+        str = str.toLowerCase();
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            if ("aeiou".indexOf(c) != -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+
+        System.out.println("Number of vowels: " + countVowels(input));
+
+        sc.close();
+    }
+}
