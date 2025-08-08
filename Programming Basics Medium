@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter temperature value: ");
+        double temp = sc.nextDouble();
+
+        System.out.print("Enter scale (C, F, K): ");
+        char scale = sc.next().toUpperCase().charAt(0);
+
+        switch (scale) {
+            case 'C':
+                System.out.println("Fahrenheit: " + ((temp * 9 / 5) + 32));
+                System.out.println("Kelvin: " + (temp + 273.15));
+                break;
+            case 'F':
+                System.out.println("Celsius: " + ((temp - 32) * 5 / 9));
+                System.out.println("Kelvin: " + (((temp - 32) * 5 / 9) + 273.15));
+                break;
+            case 'K':
+                System.out.println("Celsius: " + (temp - 273.15));
+                System.out.println("Fahrenheit: " + (((temp - 273.15) * 9 / 5) + 32));
+                break;
+            default:
+                System.out.println("Invalid scale entered.");
+        }
+
+        sc.close();
+    }
+}
